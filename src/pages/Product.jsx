@@ -4,6 +4,7 @@ import { Button, Dialog, DialogTitle, DialogContent, DialogActions, Chip } from 
 import AddProductComponent from "./AddProductComponent";
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 
 const Product = () => {
   const [openCategoryDialog, setOpenCategoryDialog] = useState(false);
@@ -85,7 +86,11 @@ const Product = () => {
               </div>
               <div className="w-2/3 pl-3 flex flex-col h-full">
                 <div className="flex-1 flex items-center text-xl font-bold">{product.name}</div>
-                <div className="flex-1 flex items-center text-lg">{product.priceInr}</div>
+
+<div className="flex-1 flex items-center text-lg">
+  <CurrencyRupeeIcon fontSize="small" className="mr-1" /> {product.priceInr}
+</div>
+
                 <Chip label={product.brand} color="primary" size="small" className="flex-1 flex items-center text-lg" style={{ width: '80px' }} />
               </div>
             </div>
